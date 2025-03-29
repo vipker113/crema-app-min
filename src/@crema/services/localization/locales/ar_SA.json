@@ -723,5 +723,8 @@
   "sidebar.layout.grid": "شبكة",
   "sidebar.layout.layout": "تخطيط",
   "sidebar.layout.space": "الفراغ",
-  "sidebar.components.layout": "تخطيط"
+  "sidebar.components.layout": "تخطيط",
+  "sidebar.settings": "الإعدادات",
+  "sidebar.settings.generalSetting": "إعدادات عامة",
+  "sidebar.settings.notificationSetting": "إعدادات الإشعارات"
 }

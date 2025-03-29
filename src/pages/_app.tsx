@@ -11,8 +11,8 @@ import { store } from "../toolkit/store";
 import { Provider } from "react-redux";
 import "antd/dist/reset.css";
 import "../../public/styles/index.css";
+import "./styles.css";
 import { GlobalStyles } from "@crema/core/theme/GlobalStyle";
-import { Normalize } from "styled-normalize";
 import { AppProps } from "next/app";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -28,7 +28,6 @@ export default function MyApp(props: AppProps) {
             <AppAuthProvider>
               <AuthRoutes>
                 <GlobalStyles />
-                <Normalize />
                 <AppPageMeta />
                 <Component {...pageProps} />
               </AuthRoutes>

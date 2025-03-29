@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppHeader from "./AppHeader";
 import AppContentView from "../../AppContentView";
-import AppThemeSetting from "../../AppThemeSetting";
 import AppFooter from "../components/AppFooter";
 import clsx from "clsx";
 import { FooterType, LayoutType } from "@crema/constants/AppEnums";
@@ -57,7 +56,6 @@ const HorDefault: React.FC<Props> = ({ children, routesConfig }) => {
           <AppFooter />
         </StyledContainer>
       </StyledAppLayoutHorMain>
-      <AppThemeSetting />
     </StyledAppLayoutHor>
   );
 };

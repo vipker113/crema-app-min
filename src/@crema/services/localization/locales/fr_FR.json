@@ -721,7 +721,10 @@
   "sidebar.other.configProvider": "ConfigProvider",
   "sidebar.layout.divider": "Jakaja",
   "sidebar.layout.grid": "Ruudukko",
-  "sidebar.layout.layout": "Layout",
-  "sidebar.layout.space": "Space",
-  "sidebar.components.layout": "Layout"
+  "sidebar.layout.layout": "Asettelu",
+  "sidebar.layout.space": "Tila",
+  "sidebar.components.layout": "Asettelu",
+  "sidebar.settings": "Asetukset",
+  "sidebar.settings.generalSetting": "Yleiset asetukset",
+  "sidebar.settings.notificationSetting": "Ilmoitusasetukset"
 }

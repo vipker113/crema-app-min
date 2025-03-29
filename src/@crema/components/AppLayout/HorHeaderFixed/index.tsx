@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AppSidebar from "./AppSidebar";
 import AppHeader from "./AppHeader";
 import AppContentView from "../../AppContentView";
-import AppThemeSetting from "../../AppThemeSetting";
 import AppFooter from "../components/AppFooter";
 import clsx from "clsx";
 import { FooterType, LayoutType } from "@crema/constants/AppEnums";
@@ -56,7 +55,6 @@ const HorHeaderFixed: React.FC<Props> = ({ children, routesConfig }) => {
           <AppFooter />
         </StyledContainer>
       </StyledAppLayoutHeaderFixedMain>
-      <AppThemeSetting />
     </StyledAppLayoutHorFixed>
   );
 };
