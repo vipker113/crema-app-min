@@ -2,7 +2,6 @@ import React from "react";
 import AppSidebar from "./AppSidebar";
 import AppHeader from "./AppHeader";
 import AppContentView from "../../AppContentView";
-import AppThemeSetting from "../../AppThemeSetting";
 import clsx from "clsx";
 import { FooterType, LayoutType } from "@crema/constants/AppEnums";
 import AppFooter from "../components/AppFooter";
@@ -37,7 +36,6 @@ const UserMiniHeader: React.FC<Props> = ({ children, routesConfig }) => {
           <AppFooter />
         </StyledUserMiniHeaderScrollbar>
       </StyledAppLayoutMinibarMain>
-      <AppThemeSetting />
     </StyledAppLayoutMinibar>
   );
 };

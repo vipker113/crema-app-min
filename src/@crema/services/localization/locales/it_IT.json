@@ -723,5 +723,8 @@
   "sidebar.layout.grid": "Griglia",
   "sidebar.layout.layout": "Disposizione",
   "sidebar.layout.space": "Spazio",
-  "sidebar.components.layout": "Disposizione"
+  "sidebar.components.layout": "Disposizione",
+  "sidebar.settings": "Impostazioni",
+  "sidebar.settings.generalSetting": "Impostazioni generali",
+  "sidebar.settings.notificationSetting": "Impostazioni delle notifiche"
 }

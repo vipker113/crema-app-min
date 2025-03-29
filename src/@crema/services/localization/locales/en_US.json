@@ -829,5 +829,8 @@
   "sidebar.layout.grid": "Grid",
   "sidebar.layout.layout": "Layout",
   "sidebar.layout.space": "Space",
-  "sidebar.components.layout": "Layout"
+  "sidebar.components.layout": "Layout",
+  "sidebar.settings": "Settings",
+  "sidebar.settings.generalSetting": "General Settings",
+  "sidebar.settings.notificationSetting": "Notification Settings"
 }

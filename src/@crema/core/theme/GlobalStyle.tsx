@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { rgba, darken } from 'polished';
+import { createGlobalStyle } from "styled-components";
+import { rgba, darken } from "polished";
 
 export const GlobalStyles = createGlobalStyle`
   html,
@@ -220,9 +220,9 @@ export const GlobalStyles = createGlobalStyle`
 
     &:hover, &:focus {
       background-color: ${({ theme }: { theme: any }) =>
-        theme.palette.tooltipBg + '04'};
+        theme.palette.tooltipBg + "04"};
       border-color: ${({ theme }: { theme: any }) =>
-        theme.palette.tooltipBg + '04'};
+        theme.palette.tooltipBg + "04"};
       color: ${({ theme }: { theme: any }) => theme.palette.text.primary};
     }
 

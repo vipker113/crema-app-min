@@ -723,5 +723,8 @@
   "sidebar.layout.grid": "Red",
   "sidebar.layout.layout": "Disposición",
   "sidebar.layout.space": "Espacio",
-  "sidebar.components.layout": "Disposición"
+  "sidebar.components.layout": "Disposición",
+  "sidebar.settings": "Configuración",
+  "sidebar.settings.generalSetting": "Configuración general",
+  "sidebar.settings.notificationSetting": "Configuración de notificaciones"
 }

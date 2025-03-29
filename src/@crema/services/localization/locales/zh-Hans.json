@@ -723,5 +723,8 @@
   "sidebar.layout.grid": "网格",
   "sidebar.layout.layout": "布局",
   "sidebar.layout.space": "空间",
-  "sidebar.components.layout": "布局"
+  "sidebar.components.layout": "布局",
+  "sidebar.settings": "设置",
+  "sidebar.settings.generalSetting": "通用设置",
+  "sidebar.settings.notificationSetting": "通知设置"
 }

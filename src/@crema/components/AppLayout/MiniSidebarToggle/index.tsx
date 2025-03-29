@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import AppSidebar from "./AppSidebar";
 import AppHeader from "./AppHeader";
 import AppContentView from "../../AppContentView";
-import AppThemeSetting from "../../AppThemeSetting";
 import AppFooter from "../components/AppFooter";
 import clsx from "clsx";
 import { FooterType } from "@crema/constants/AppEnums";
@@ -43,7 +42,6 @@ const MiniSidebarToggle: React.FC<Props> = ({ children, routesConfig }) => {
           <AppFooter />
         </StyledMainMiniScrollbar>
       </StyledAppLayoutMiniSidebarMain>
-      <AppThemeSetting />
     </StyledAppLayoutMiniSidebar>
   );
 };
