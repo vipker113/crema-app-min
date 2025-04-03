@@ -1,57 +1,93 @@
 import React, { useEffect, useState } from "react";
-import { getRouteMenus } from "./VerticalMenuUtils";
-import clsx from "clsx";
-import defaultConfig from "@crema/constants/defaultConfig";
 import { useSidebarContext } from "@crema/context/AppContextProvider/SidebarContextProvider";
-import { MenuStyle } from "@crema/constants/AppEnums";
-import { StyledVerticalNav } from "./index.styled";
 import { useRouter } from "next/router";
 import { RouterConfigData } from "@crema/types/models/Apps";
-import { useIntl } from "react-intl";
+import { Menu } from "antd";
+import { SiderTheme } from "antd/es/layout/Sider";
+import { cn } from "lib/utils";
+
+const { SubMenu } = Menu;
 
 type Props = {
   routesConfig: RouterConfigData[];
 };
 
+const LOCAL_STORAGE_KEY = "openSubMenuKeys";
+
 const AppVerticalNav: React.FC<Props> = ({ routesConfig }) => {
-  const { menuStyle, sidebarColorSet } = useSidebarContext();
-  const { pathname } = useRouter();
-  const selectedKeys = pathname.substr(1).split("/");
-  const [openKeys, setOpenKeys] = useState([selectedKeys[0]]);
+  const { sidebarColorSet } = useSidebarContext();
+  const router = useRouter();
+  const { pathname } = router;
+  const selectedKeys = pathname.split("/").filter(Boolean);
+  const activeKey = selectedKeys[selectedKeys.length - 1] || selectedKeys[0];
+
+  const [openKeys, setOpenKeys] = useState<string[]>(
+    () => JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || "[]") || []
+  );
 
   useEffect(() => {
-    setOpenKeys([selectedKeys[selectedKeys.length - 2]]);
-  }, []);
+    const parentKey = selectedKeys[selectedKeys.length - 2];
+    if (parentKey && !openKeys.includes(parentKey)) {
+      setOpenKeys((prevKeys) => [...prevKeys, parentKey]);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(openKeys));
+  }, [openKeys]);
 
   const onOpenChange = (keys: string[]) => {
-    const latestOpenKey = keys.find(
-      (key: string) => openKeys.indexOf(key) === -1
-    );
-    setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+    setOpenKeys(keys);
   };
 
-  const { messages } = useIntl();
+  const handleMenuItemClick = (path: string) => {
+    if (path) {
+      router.push(path);
+    }
+  };
+
+  const renderMenuItems = (routes: RouterConfigData[]) => {
+    return routes.map((route) => {
+      if (route.type === "group" && route.children) {
+        return (
+          <SubMenu
+            key={route.id}
+            icon={route.icon}
+            title={<span>{route.title}</span>}
+          >
+            {renderMenuItems(route.children)}
+          </SubMenu>
+        );
+      } else {
+        return (
+          <Menu.Item
+            key={route.id}
+            icon={route.icon}
+            onClick={() => handleMenuItemClick(route.path)}
+            className={cn(
+              "px-4 py-2 rounded-md transition-all duration-300",
+              activeKey === route.id
+                ? "!bg-gray-500 !text-white"
+                : "!hover:bg-gray-200 dark:hover:bg-gray-700"
+            )}
+          >
+            <span>{route.title}</span>
+          </Menu.Item>
+        );
+      }
+    });
+  };
+
   return (
-    <StyledVerticalNav
-      theme={sidebarColorSet.mode}
-      color={sidebarColorSet.sidebarMenuSelectedTextColor}
+    <Menu
+      theme={sidebarColorSet.mode as SiderTheme}
       mode="inline"
-      className={clsx({
-        "menu-rounded": menuStyle === MenuStyle.ROUNDED,
-        "menu-rounded rounded-menu-reverse":
-          menuStyle === MenuStyle.ROUNDED_REVERSE,
-        "menu-rounded standard-menu": menuStyle === MenuStyle.STANDARD,
-        "menu-rounded curved-menu": menuStyle === MenuStyle.CURVED_MENU,
-        "bg-color-menu":
-          sidebarColorSet.sidebarBgColor !==
-          defaultConfig.sidebar.colorSet.sidebarBgColor,
-      })}
-      openKeys={openKeys}
       onOpenChange={onOpenChange}
-      selectedKeys={[selectedKeys[selectedKeys.length - 1]]}
-      defaultSelectedKeys={[selectedKeys[selectedKeys.length - 1]]}
-      items={getRouteMenus(routesConfig, messages)}
-    />
+      selectedKeys={[activeKey]}
+      openKeys={openKeys}
+    >
+      {renderMenuItems(routesConfig)}
+    </Menu>
   );
 };
 

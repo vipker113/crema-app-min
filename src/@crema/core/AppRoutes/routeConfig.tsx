@@ -1,35 +1,25 @@
 import React from "react";
-import { BiAlignLeft } from "react-icons/bi";
+import {
+  BellDot,
+  CircleGauge,
+  Settings,
+  SlidersHorizontal,
+} from "lucide-react";
 
 const routesConfig = [
   {
-    id: "app",
-    title: "Sample",
-    messageId: "sidebar.sample",
-    type: "group",
-    children: [
-      {
-        id: "page-1",
-        title: "Page 1",
-        messageId: "sidebar.sample.page1",
-        type: "item",
-        icon: <BiAlignLeft />,
-        path: "/sample/page-1",
-      },
-      {
-        id: "page-2",
-        title: "Page 2",
-        messageId: "sidebar.sample.page2",
-        type: "item",
-        icon: <BiAlignLeft />,
-        path: "/sample/page-2",
-      },
-    ],
+    id: "dashboard",
+    title: "DashBoard",
+    messageId: "sidebar.dashboard",
+    path: "/dashboard",
+    icon: <CircleGauge size={20} />,
+    type: "collapse",
   },
   {
     id: "setting",
     title: "Settings",
     messageId: "sidebar.settings",
+    icon: <Settings size={20} />,
     type: "group",
     children: [
       {
@@ -37,7 +27,7 @@ const routesConfig = [
         title: "General Setting",
         messageId: "sidebar.settings.generalSetting",
         type: "item",
-        icon: <BiAlignLeft />,
+        icon: <SlidersHorizontal size={20} />,
         path: "/settings/general-setting",
       },
       {
@@ -45,7 +35,7 @@ const routesConfig = [
         title: "Notification Setting",
         messageId: "sidebar.settings.notificationSetting",
         type: "item",
-        icon: <BiAlignLeft />,
+        icon: <BellDot size={20} />,
         path: "/settings/notification-setting",
       },
     ],

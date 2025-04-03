@@ -1,7 +1,7 @@
 import React from "react";
 
 const NotificationSetting = () => {
-  return <div>NotificationSetting</div>;
+  return <div className="">NotificationSetting</div>;
 };
 
 export default NotificationSetting;

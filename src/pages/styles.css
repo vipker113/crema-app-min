@@ -406,7 +406,7 @@ summary svg {
   align-items: center;
 }
 
-:where(.css-dev-only-do-not-override-xz59wa).ant-menu-light:not(
+/* :where(.css-dev-only-do-not-override-xz59wa).ant-menu-light:not(
     .ant-menu-horizontal
   )
   .ant-menu-item-selected {
@@ -417,7 +417,7 @@ summary svg {
   .ant-menu-title-content {
     color: white;
   }
-}
+} */
 
 @media screen and (min-width: 768px) {
   #hero {
