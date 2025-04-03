@@ -832,5 +832,6 @@
   "sidebar.components.layout": "Layout",
   "sidebar.settings": "Settings",
   "sidebar.settings.generalSetting": "General Settings",
-  "sidebar.settings.notificationSetting": "Notification Settings"
+  "sidebar.settings.notificationSetting": "Notification Settings",
+  "sidebar.dashboard": "Dashboard"
 }
