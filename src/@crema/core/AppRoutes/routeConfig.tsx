@@ -4,6 +4,7 @@ import {
   CircleGauge,
   Settings,
   SlidersHorizontal,
+  User,
 } from "lucide-react";
 
 const routesConfig = [
@@ -13,6 +14,14 @@ const routesConfig = [
     messageId: "sidebar.dashboard",
     path: "/dashboard",
     icon: <CircleGauge size={20} />,
+    type: "collapse",
+  },
+  {
+    id: "users",
+    title: "User",
+    messageId: "sidebar.user",
+    path: "/users",
+    icon: <User size={20} />,
     type: "collapse",
   },
   {
