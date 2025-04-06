@@ -406,18 +406,9 @@ summary svg {
   align-items: center;
 }
 
-/* :where(.css-dev-only-do-not-override-xz59wa).ant-menu-light:not(
-    .ant-menu-horizontal
-  )
-  .ant-menu-item-selected {
-  background-color: rgb(68, 67, 65);
-  color: white;
-
-  .ant-menu-item-icon,
-  .ant-menu-title-content {
-    color: white;
-  }
-} */
+.ant-table-thead > tr > th {
+  @apply !text-[#475467] !bg-[#F2F4F7];
+}
 
 @media screen and (min-width: 768px) {
   #hero {

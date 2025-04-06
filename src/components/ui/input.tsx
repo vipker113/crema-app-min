@@ -1,6 +1,5 @@
 import { DownOutlined } from "@ant-design/icons";
-import { Button, Dropdown, MenuProps, message, Space } from "antd";
-import InputAntd from "antd/es/input/Input";
+import { Button, Dropdown, Input, MenuProps, message, Space } from "antd";
 import InputCheckbox from "components/ui/check-box";
 import InputURL from "components/ui/input-url";
 import UploadFile from "components/ui/upload-file";
@@ -10,7 +9,7 @@ import React from "react";
 type InputProps = {
   label?: string;
   className?: string;
-  type?: string;
+  type?: "file" | "url" | "checkbox" | "dropdown" | "text" | "textarea";
   placeholder?: string;
   description?: string;
   disabled?: boolean;
@@ -75,7 +74,7 @@ export const InputGroup = ({
 
       default:
         return (
-          <InputAntd
+          <Input
             placeholder={placeholder}
             type={type}
             allowClear
