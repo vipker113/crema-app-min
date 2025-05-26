@@ -65,9 +65,9 @@ const AppVerticalNav: React.FC<Props> = ({ routesConfig }) => {
             icon={route.icon}
             onClick={() => handleMenuItemClick(route.path)}
             className={cn(
-              "px-4 py-2 rounded-md transition-all duration-300",
+              "rounded-md transition-all duration-300 flex justify-center items-center",
               activeKey === route.id
-                ? "!bg-gray-500 !text-white"
+                ? "!bg-primary !text-gray-950"
                 : "!hover:bg-gray-200 dark:hover:bg-gray-700"
             )}
           >
